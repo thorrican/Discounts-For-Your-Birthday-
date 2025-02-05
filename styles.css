@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+  font-family: 'Noto Sans Mongolian', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Logo Styling */
+.logo {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: -10px;
+  margin-top: 80px;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  padding: 50px 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.input-box {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 80px;
+}
+
+label {
+  font-weight: 500;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 18px;
+  color: #555;
+  font-size: 0.8rem;
+  font-family: 'Noto Sans Mongolian', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  box-sizing: border-box;
+  height: 45px;
+}
+
+select {
+  appearance: none;
+  background-color: white;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23555555%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px auto;
+  padding-right: 30px;
+}
+
+#submit-btn {
+  padding: 15px 30px;
+  background-color: #575757;
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 45px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 0;
+}
+
+#submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f28c42, #e18592);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+#submit-btn:hover::before {
+  opacity: 1;
+}
+
+
+.results-section {
+  margin-top: 50px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+#discounts-list {
+  margin-top: 20px;
+}
+
+/* Results Container Styling */
+.result-container {
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  background: white;
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: Add a slight upward movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the results */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.result-container:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.category-icon {
+  width: 40px; /* Icon size */
+  height: 40px; /* Ensure icons are square */
+  margin-right: 20px; /* Space between icon and text */
+  object-fit: contain; /* Ensure the icon fits within the container */
+}
+
+.result-details {
+  display: flex;
+  align-items: center; /* Vertically center the brand and description */
+  flex: 1; /* Take remaining space */
+}
+
+.result-brand {
+  font-size: 1.2rem; /* Slightly larger */
+  font-weight: 600; /* Bold */
+  color: #333;
+  margin: 0; /* Remove default margin */
+  min-width: 150px; /* Ensures all brand names take the same space */
+  text-align: left;
+}
+
+.result-description {
+  font-size: 1rem; /* Slightly larger */
+  font-weight: 300; /* Light font weight */
+  color: #666;
+  margin-left: 50px; /* Space between brand and description */
+  text-align: left; /* Align text to the left */
+}
+
+.no-results {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f28c42;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Back to Top Button */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #f28c42;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top:hover {
+  background-color: #e18592;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-box {
+    min-height: auto;
+  }
+
+  #submit-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

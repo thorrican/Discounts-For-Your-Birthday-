@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BirthYaY</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="./assets/Birthyay-logo_3.png" alt="BirthYaY Logo" class="logo">
+  </header>
+
+  <main>
+    <div class="input-container">
+      <!-- Birth Month Selection -->
+      <div class="input-box">
+        <label for="birth-month">Your Birth Month</label>
+        <select id="birth-month" name="birth-month" required>
+          <option value="" selected>Select a month</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+
+      <!-- Birth Day Selection -->
+      <div class="input-box">
+        <label for="birth-day">Your Birth Day</label>
+        <select id="birth-day" name="birth-day" required>
+          <option value="" selected>Select a day</option>
+          <!-- Days will be added dynamically with JS -->
+        </select>
+      </div>
+
+      <!-- Region Selection -->
+      <div class="input-box">
+        <label for="region">Your Region</label>
+        <select id="region" name="region" required>
+          <option value="none" selected>Select a region</option>
+          <option value="de">Germany</option>
+          <option value="uk">United Kingdom</option>
+          <option value="es">Spain</option>
+          <option value="at">Austria</option>
+          <option value="ch">Switzerland</option>
+        </select>
+      </div>
+
+      <!-- Categories Selection -->
+      <div class="input-box">
+        <label for="categories">Categories</label>
+        <select id="categories" name="categories">
+          <option value="all" selected>All</option> <!-- Default option -->
+          <option value="food">Food</option>
+          <option value="shopping">Shopping</option>
+          <option value="games">Games</option>
+          <option value="activities">Activities</option>
+          <option value="electronics">Electronics</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Search and Clear Buttons -->
+      <button type="submit" id="submit-btn">Search</button>
+    </div>
+
+    <section class="results-section">
+      <div id="loading-spinner" class="loading-spinner" style="display: none;"></div>
+      <div id="discounts-list">
+        <!-- Results will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
+
+  <footer>
+    <p>Icons created by <a href="https://www.flaticon.com/free-icons/restaurant">Flaticon</a>. Data sourced from various brands and loyalty programs.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
